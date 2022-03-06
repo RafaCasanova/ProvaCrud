@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>[[${pageTitle}]]</title>
+    <link rel="stylesheet" type="text/css">
+</head>
+<body>
+ <h1>[[${pageTitle}]]</h1>
+    <form th:action="@{/prova/save}" method="post" th:object="${prova}">
+       <input type="hidden" th:field="*{ID}">
+        <div>
+            <div>
+                <label>Nome</label>
+                <input type="text" th:field="*{NOME}"/>
+            </div>
+            <div>
+                <label>Nota</label>
+                <input type="number" th:field="*{NOTA}">
+            </div>
+            <div>
+                <button type="submit">Gravar</button>
+                <button type="reset">Limpar</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Prova Home Page</title>
+    <link rel="stylesheet" type="text/css">
+</head>
+<body>
+<div ></div>
+<h1>Funcionando</h1>
+<a th:href="@{'/provas/'}">prova</a>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>NOME</th>
+        <th>NOTA</th>
+    </tr>
+    <th:block th:each="Prova : ${ListaDeProvas}">
+        <tr>
+            <td th:text="${Prova.ID}">[[${Prova.ID}]]</td>
+            <td th:text="${Prova.NOME}">[[${Prova.NOME}]]</td>
+            <td th:text="${Prova.NOTA}">[[${Prova.NOTA}]]</td>
+            <td><a th:href="@{'/Prova/edit/' + ${Prova.ID}}">Edit</a></td>
+            <td><a th:href="@{'/Prova/delete/' + ${Prova.ID}}">Delete</a></td>
+        </tr>
+    </th:block>
+    </thead>
+</table>
+</body>
+</html>
