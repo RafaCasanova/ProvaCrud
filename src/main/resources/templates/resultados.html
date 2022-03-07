@@ -3,24 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Prova Home Page</title>
-    <link rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
-<body>
-<h1>Funcionando</h1>
-<h1>[[${total}]]</h1>
-
-<div>
+<body class="container-sm" >
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="navbar" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{'/'}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{'/provas/'}">Prova</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{'/provas/cadastro'}">Cadastro</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<h1>Resultados</h1>
+<div class="card p-3 m-3" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Media da nota dos alunos</h5>
+        <p class="card-text">A media das notas foi: [[${media}]] </p>
+    </div>
+</div>
+<div class="card p-3 m-3" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">A menor nota</h5>
+        <p class="card-text">Nome: [[${MenorNota.NOME}]], Nota: [[${MenorNota.NOTA}]]</p>
+    </div>
+</div>
+<div class="card p-3 m-3" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">A maior nota</h5>
+        <p class="card-text">Nome: [[${MaiorNota.NOME}]], Nota: [[${MaiorNota.NOTA}]]</p>
+    </div>
 </div>
 
-<a th:href="@{'/provas'}">
-    <h1>provas</h1>
-</a>
-<a>
-    <h1></h1>
-</a>
-
-
-<table>
-</table>
 </body>
 </html>
